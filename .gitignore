@@ -1,0 +1,44 @@
+# ----------------------
+# PYTHON / DJANGO
+# ----------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+lf/
+venv/
+env/
+
+# Django stuff
+*.log
+db.sqlite3
+*.sqlite3
+
+# Environment variables
+.env
+
+# ----------------------
+# REACT / NODE
+# ----------------------
+node_modules/
+build/
+dist/
+assets/
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ----------------------
+# OS FILES
+# ----------------------
+.DS_Store
+Thumbs.db
+
+# ----------------------
+# IDE / EDITOR
+# ----------------------
+.vscode/
+.idea/

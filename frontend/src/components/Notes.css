@@ -1,0 +1,124 @@
+.notes-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* PANELS */
+.notes-panel, .tasks-panel {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px var(--shadow);
+  transition: transform 0.2s ease;
+}
+
+.notes-panel:hover,
+.tasks-panel:hover {
+  transform: translateY(-3px);
+}
+
+/* HEADINGS */
+.notes-panel h2,
+.tasks-panel h2 {
+  margin-bottom: 10px;
+}
+
+/* ADD BUTTON */
+.notes-panel button,
+.tasks-panel button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #4f46e5;
+  color: white;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.notes-panel button:hover,
+.tasks-panel button:hover {
+  background: #3730a3;
+}
+
+/* INPUT SECTION */
+.notes-add,
+.task-add {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+/* INPUTS */
+.notes-add input,
+.tasks-panel input,
+.tasks-panel textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: 0.2s;
+}
+
+.notes-add input:focus,
+.tasks-panel input:focus,
+.tasks-panel textarea:focus {
+  border-color: #4f46e5;
+}
+
+/* NOTE ITEM */
+.note-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  margin-top: 6px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.03);
+}
+
+.note-item button {
+  background: transparent;
+  color: red;
+  font-size: 16px;
+}
+
+/* TASK ITEM */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.03);
+}
+
+.task-item input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.task-item strong {
+  display: block;
+}
+
+.task-item p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: #555;
+}
+
+/* COMPLETED TASK */
+.task-item.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+/* DELETE BUTTON */
+.task-item button {
+  background: transparent;
+  color: red;
+  font-size: 16px;
+}

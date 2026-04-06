@@ -1,0 +1,64 @@
+/* --- Global Resets --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #fdf6e3;
+  --card-bg: #fff8ef;
+  --text-main: #333;
+  --text-muted: #555;
+  --accent: #10b981;
+  --border-subtle: #ddd;
+  --shadow: rgba(0,0,0,0.15);
+}
+
+/* --- Body --- */
+body {
+  background-color: var(--bg);
+  color: var(--text-main);
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+/* --- App Layout (FIXED) --- */
+.App {
+  width: 100%;              /* ✅ FULL WIDTH */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 2rem;     /* ✅ controlled spacing instead of centering */
+}
+
+/* --- Content --- */
+.tab-content {
+  flex: 1;
+  width: 100%;
+  max-width: 1600px;   /* 👈 sweet spot */
+  margin: 1.5rem auto; /* center ONLY content, not whole app */
+  background: var(--card-bg);
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+/* --- Footer --- */
+.dashboard-footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: var(--accent);
+}
+
+/* --- Animation --- */
+.fade-in {
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}

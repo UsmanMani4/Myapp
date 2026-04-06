@@ -1,0 +1,64 @@
+.prayer-card {
+  width: 100%;                          /* ✅ full width */
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px var(--shadow);
+  color: var(--text-main);              /* ✅ FIX (was white on light bg) */
+}
+
+/* TITLE */
+.prayer-card h2 {
+  margin-bottom: 1.5rem;
+}
+
+/* LIST */
+.prayer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ITEM */
+.prayer-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.prayer-item:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+/* CHECKBOX */
+.prayer-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);   /* ✅ unified color */
+}
+
+/* LABEL TEXT */
+.prayer-item span {
+  font-size: 15px;
+}
+
+/* BUTTON */
+.prayer-submit {
+  padding: 0.7rem 1.6rem;
+  border-radius: 12px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.prayer-submit:hover {
+  opacity: 0.85;
+}
