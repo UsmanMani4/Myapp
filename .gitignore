@@ -1,44 +1,26 @@
-# ----------------------
-# PYTHON / DJANGO
-# ----------------------
+# Python cache
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
 
-# Virtual Environment
-lf/
-venv/
-env/
-
-# Django stuff
-*.log
-db.sqlite3
+# Database
 *.sqlite3
+db.sqlite3
 
-# Environment variables
-.env
+# Python Virtual Environment
+venv/
+.venv/
+lf/
 
-# ----------------------
-# REACT / NODE
-# ----------------------
+# Frontend Assets (Specific path)
+frontend/src/assets/
+frontend/src/assest/
+
+# Node Modules (To prevent that infinite loop again)
 node_modules/
-build/
-dist/
-assets/
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+frontend/node_modules/
 
-# ----------------------
-# OS FILES
-# ----------------------
+# Environment Variables & OS files
+.env
 .DS_Store
 Thumbs.db
 
-# ----------------------
-# IDE / EDITOR
-# ----------------------
-.vscode/
-.idea/
