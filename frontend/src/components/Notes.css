@@ -122,3 +122,68 @@
   color: red;
   font-size: 16px;
 }
+
+/* PINNED NOTE CARD */
+.note-pinned {
+  border-left: 3px solid #4f46e5;
+  background: rgba(79, 70, 229, 0.07);
+}
+
+/* PIN INDICATOR (small 📌 next to title) */
+.pin-indicator {
+  font-size: 0.85rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* PIN BUTTON */
+.pin-btn {
+  background: transparent !important;
+  color: #aaa !important;
+  font-size: 15px !important;
+  padding: 4px 6px !important;
+  opacity: 0.5;
+  transition: opacity 0.2s, transform 0.15s !important;
+}
+
+.pin-btn:hover {
+  opacity: 1;
+  transform: scale(1.2);
+  background: transparent !important;
+}
+
+.pin-btn.pinned {
+  opacity: 1;
+  color: #4f46e5 !important;
+  filter: drop-shadow(0 0 3px rgba(79, 70, 229, 0.4));
+}
+
+/* TASK COUNTER BAR */
+.task-counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  margin-bottom: 10px;
+  background: rgba(79, 70, 229, 0.07);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #555;
+  gap: 10px;
+}
+
+/* CLEAR COMPLETED BUTTON */
+.clear-completed-btn {
+  background: #ef4444 !important;
+  color: white !important;
+  font-size: 0.78rem !important;
+  padding: 4px 10px !important;
+  border-radius: 8px !important;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.2s !important;
+}
+
+.clear-completed-btn:hover {
+  background: #dc2626 !important;
+}

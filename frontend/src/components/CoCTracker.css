@@ -1,0 +1,210 @@
+.coc-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: var(--text-main);
+}
+
+.coc-summary {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.coc-summary h3 {
+  margin: 0;
+}
+
+.coc-summary p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+.coc-main {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+/* Account Panel */
+.coc-accounts {
+  flex: 1;
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px var(--shadow);
+  max-width: 300px;
+  position: sticky;
+  top: 2rem;
+}
+
+.coc-account-add {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.coc-account-add input {
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+.coc-account-add button {
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.coc-account-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.coc-account-item {
+  padding: 1rem;
+  background: rgba(0,0,0,0.05);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.coc-account-item:hover, .coc-account-item.active {
+  background: var(--accent);
+  color: white;
+}
+
+/* Builder Panel */
+.coc-builders {
+  flex: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.coc-builder-card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.coc-builder-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.coc-badge {
+  padding: 0.3rem 0.6rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+.coc-badge.free {
+  background: #4caf50;
+}
+
+.coc-badge.busy {
+  background: #f44336;
+}
+
+.coc-builder-input {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.coc-countdown {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  color: #f44336;
+  margin: 0.5rem 0;
+}
+
+.coc-btn-free {
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: none;
+  background: #2196f3;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+/* Sub-tabs */
+.coc-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0;
+}
+
+.coc-tab-btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  border: none;
+  background: var(--card-bg);
+  color: var(--text-main);
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: 0.2s;
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+.coc-tab-btn.active {
+  background: var(--accent);
+  color: white;
+}
+
+.coc-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1; /* take up full width below tabs */
+}
+
+.coc-timeline-card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+.coc-timeline-card h3, .coc-timeline-card h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.coc-timeline-card.free-section {
+  border-left: 5px solid #4caf50;
+}
+
+.empty-text {
+  opacity: 0.5;
+  font-style: italic;
+  margin: 0;
+}

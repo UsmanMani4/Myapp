@@ -1,0 +1,91 @@
+.habit-container {
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: 20px;
+  color: var(--text-main);
+  box-shadow: 0 8px 25px var(--shadow);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.habit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.habit-add {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.habit-add input {
+  flex: 1;
+  padding: 0.8rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+.habit-add button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.habit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.habit-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background: rgba(0,0,0,0.02);
+  border-radius: 12px;
+  transition: 0.2s;
+}
+
+.habit-item:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+.habit-item-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.habit-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.habit-item span {
+  font-size: 1.1rem;
+}
+
+.habit-delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
+
+.habit-delete:hover {
+  opacity: 1;
+}

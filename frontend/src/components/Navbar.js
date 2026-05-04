@@ -9,6 +9,9 @@ function Navbar({ activeTab, setActiveTab, currentTime }) {
     { name: 'Home', icon: '🏠' },
     { name: 'Notes', icon: '📝' },
     { name: 'Prayer', icon: '🕌' },
+    { name: 'Habits', icon: '✅' },
+    { name: 'Finance', icon: '💰' },
+    { name: 'CoC', icon: '⚔️' },
     { name: 'Report', icon: '📊' }
   ];
 

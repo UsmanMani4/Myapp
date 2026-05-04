@@ -4,6 +4,9 @@ import Prayer from './components/Prayer';
 import Navbar from './components/Navbar';
 import Report from './components/Report';
 import Home from './components/Home';
+import HabitTracker from './components/HabitTracker';
+import Finance from './components/Finance';
+import CoCTracker from './components/CoCTracker';
 import './App.css';
 
 function App() {
@@ -28,6 +31,9 @@ function App() {
         {activeTab === 'Home' && <Home setActiveTab={setActiveTab} />}
         {activeTab === 'Notes' && <Notes />}
         {activeTab === 'Prayer' && <Prayer />}
+        {activeTab === 'Habits' && <HabitTracker />}
+        {activeTab === 'Finance' && <Finance />}
+        {activeTab === 'CoC' && <CoCTracker />}
         {activeTab === 'Report' && <Report />}
       </main>
 

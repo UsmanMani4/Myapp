@@ -7,9 +7,63 @@ const Prayer = () => {
   const [changes, setChanges] = useState({});
   const today = new Date().toISOString().split('T')[0];
 
+  const [fasting, setFasting] = useState(null);
+  const [didFast, setDidFast] = useState(false);
+  const [fastingNote, setFastingNote] = useState('');
+
   useEffect(() => {
     fetchPrayer();
+    fetchFasting();
   }, []);
+
+  const fetchFasting = async () => {
+    try {
+      const res = await axios.get(`http://127.0.0.1:8000/api/fasting/?date=${today}`);
+      if (res.data && res.data.length > 0) {
+        const todayFasting = res.data[0];
+        setFasting(todayFasting);
+        setDidFast(todayFasting.did_fast);
+        setFastingNote(todayFasting.note || '');
+      } else {
+        setFasting(null);
+        setDidFast(false);
+        setFastingNote('');
+      }
+    } catch (err) {
+      console.error('Failed to fetch fasting:', err);
+    }
+  };
+
+  const submitFasting = async (newDidFast, newNote) => {
+    try {
+      if (!fasting) {
+        const res = await axios.post(`http://127.0.0.1:8000/api/fasting/`, { 
+          date: today, 
+          did_fast: newDidFast,
+          note: newNote
+        });
+        setFasting(res.data);
+      } else {
+        const res = await axios.patch(`http://127.0.0.1:8000/api/fasting/${fasting.id}/`, { 
+          did_fast: newDidFast,
+          note: newNote
+        });
+        setFasting(res.data);
+      }
+    } catch (err) {
+      console.error('Failed to update fasting:', err);
+    }
+  };
+
+  const handleFastToggle = () => {
+    const newVal = !didFast;
+    setDidFast(newVal);
+    submitFasting(newVal, fastingNote);
+  };
+  
+  const saveFastingNote = () => {
+    submitFasting(didFast, fastingNote);
+  };
 
   const fetchPrayer = async () => {
     try {
@@ -56,6 +110,52 @@ const Prayer = () => {
         ))}
       </div>
       <button className="prayer-submit" onClick={submitPrayer}>Submit Prayer</button>
+
+      {/* FASTING SECTION */}
+      <div style={{ marginTop: '2rem', borderTop: '1px solid rgba(0,0,0,0.1)', paddingTop: '1.5rem' }}>
+        <h2 style={{ marginBottom: '1rem' }}>Today's Fast</h2>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1rem' }}>
+          <button 
+            onClick={handleFastToggle}
+            style={{
+              padding: '0.6rem 1.2rem',
+              borderRadius: '12px',
+              border: 'none',
+              background: didFast ? '#4caf50' : '#e0e0e0',
+              color: didFast ? '#fff' : '#333',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              transition: '0.2s'
+            }}
+          >
+            {didFast ? '✅ Fasting' : '❌ Not Fasting'}
+          </button>
+        </div>
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <input 
+            type="text" 
+            placeholder="Short note (e.g. feeling good)" 
+            value={fastingNote}
+            onChange={(e) => setFastingNote(e.target.value)}
+            style={{ 
+              flex: 1, 
+              padding: '0.7rem', 
+              borderRadius: '12px', 
+              border: '1px solid #ccc',
+              fontFamily: 'inherit'
+            }}
+          />
+          <button 
+            onClick={saveFastingNote} 
+            className="prayer-submit"
+          >
+            Save Note
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
