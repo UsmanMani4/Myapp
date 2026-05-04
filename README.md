@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="frontend/public/logo.png" alt="LifeOS Logo" width="120" height="120" />
-
 # ⚡ LifeOS
 ### *Your Life. Organized. Elevated.*
 
@@ -19,7 +17,7 @@
 
 ## 🧠 Philosophy
 
-Most productivity apps are built for the masses. LifeOS is built for **one life** — mine. Every feature exists because I needed it. Every tab solves a real daily problem. This is not a SaaS product. This is a personal operating system, running locally, owned completely.
+Most productivity apps are built for the masses. LifeOS is built for **one life** ,which is mine. Every feature exists because I needed it. Every tab solves a real daily problem. This is not a SaaS product. This is a personal operating system, running locally, owned completely.
 
 ---
 
